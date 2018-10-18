@@ -63,6 +63,17 @@ driver.find_element_by_link_text("成就").click()
 driver.find_element_by_link_text("任务").click()
 driver.find_element_by_link_text("公会").click()
 driver.find_element_by_link_text("首页").click()
+
 #partial link text 一部分内容，特定不重复的
 
 driver.find_elements_by_partial_link_text("公测社区3.0")
+
+
+#XPath是一种在XML文档中定位元素的语言，定位功能很强大
+#firePath工具辅助定位
+#相对路径//*[@id='main-nav-1200']/ul/li[6]/a
+#定位可以做逻辑布尔运算 and or ；性能较差、不够健壮、兼容性不好
+
+data = driver.find_elements_by_xpath("//*[@id='main-nav-1200']/ul/li[6]/a").count("贴吧")
+print(data)
+
