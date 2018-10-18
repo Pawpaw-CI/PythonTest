@@ -16,7 +16,7 @@ driver.maximize_window()
 #设置浏览器宽、高
 
 print("设置浏览器宽480，高800显示")
-driver.set_window_size(480,800)
+driver.set_window_size(1280,720)
 
 #控制浏览器前进、后退
 
@@ -37,3 +37,32 @@ driver.back()
 #前进到百度众测
 print("forward to %s"%(second_url))
 driver.forward()
+
+
+#定位方法find
+"""
+id 
+name
+class name
+link text
+partial link text 
+xpath
+css selector
+方法：find_elements_by_partial_link_text()
+"""
+#通过tag标签名对元素进行定位，不太靠谱，重名太多div input、script（脚本）
+driver.find_elements_by_tag_name("div")
+
+#通过元素中带的class属性对元素进行定位
+#class="main-head"
+driver.find_element_by_class_name("main-head")
+
+#link text 链接元素
+# <a href="/crowdtest/community/index">首页</a>
+driver.find_element_by_link_text("成就").click()
+driver.find_element_by_link_text("任务").click()
+driver.find_element_by_link_text("公会").click()
+driver.find_element_by_link_text("首页").click()
+#partial link text 一部分内容，特定不重复的
+
+driver.find_elements_by_partial_link_text("公测社区3.0")
